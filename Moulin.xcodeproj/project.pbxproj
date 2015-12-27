@@ -10,6 +10,9 @@
 		467D2D861C3019080088E33D /* Moulin.h in Headers */ = {isa = PBXBuildFile; fileRef = 467D2D851C3019080088E33D /* Moulin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		467D2D8D1C3019080088E33D /* Moulin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467D2D821C3019070088E33D /* Moulin.framework */; };
 		467D2D921C3019080088E33D /* MoulinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D2D911C3019080088E33D /* MoulinTests.swift */; };
+		467D2D9D1C30191C0088E33D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D2D9C1C30191C0088E33D /* Entity.swift */; };
+		467D2D9F1C3019320088E33D /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D2D9E1C3019320088E33D /* Property.swift */; };
+		467D2DA11C301A8D0088E33D /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D2DA01C301A8D0088E33D /* JSONConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		467D2D8C1C3019080088E33D /* MoulinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoulinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D2D911C3019080088E33D /* MoulinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoulinTests.swift; sourceTree = "<group>"; };
 		467D2D931C3019080088E33D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		467D2D9C1C30191C0088E33D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		467D2D9E1C3019320088E33D /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		467D2DA01C301A8D0088E33D /* JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 			children = (
 				467D2D851C3019080088E33D /* Moulin.h */,
 				467D2D871C3019080088E33D /* Info.plist */,
+				467D2D9C1C30191C0088E33D /* Entity.swift */,
+				467D2D9E1C3019320088E33D /* Property.swift */,
+				467D2DA01C301A8D0088E33D /* JSONConvertible.swift */,
 			);
 			path = Moulin;
 			sourceTree = "<group>";
@@ -194,6 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467D2D9F1C3019320088E33D /* Property.swift in Sources */,
+				467D2DA11C301A8D0088E33D /* JSONConvertible.swift in Sources */,
+				467D2D9D1C30191C0088E33D /* Entity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +320,7 @@
 		467D2D971C3019080088E33D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +331,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.Moulin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		467D2D981C3019080088E33D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
