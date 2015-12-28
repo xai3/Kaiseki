@@ -63,6 +63,22 @@ class FromJSONTests: XCTestCase {
         XCTAssertNil(object.objectNull.value)
     }
     
+    func testArray() {
+        let json: [String: AnyObject] = [
+            "arrayBool": [true, false, true],
+            "arrayObject": [["int": 1], ["int": 2]],
+            "arrayEmpty": [],
+            "arrayNull": NSNull(),
+        ]
+        
+        let object = Object()
+        object.fromJSON(json)
+        XCTAssertEqual(object.arrayBool.value!, [true, false, true])
+        XCTAssertEqual((object.arrayObject.value?.flatMap { $0.int.value })!, [1, 2])
+        XCTAssertEqual(object.arrayEmpty.value!, [])
+        XCTAssertNil(object.arrayNull.value)
+    }
+    
     class Object: Entity {
         let boolTrue = Property<Bool>()
         let boolFalse = Property<Bool>()
@@ -79,6 +95,11 @@ class FromJSONTests: XCTestCase {
         
         let object = Property<Object>()
         let objectNull = Property<Object>()
+        
+        let arrayBool = PropertyArray<Bool>()
+        let arrayObject = PropertyArray<Object>()
+        let arrayEmpty = PropertyArray<Int>()
+        let arrayNull = PropertyArray<Int>()
     }
     
 }
