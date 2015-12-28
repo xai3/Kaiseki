@@ -20,16 +20,21 @@ public class Property<T: ValueType>: PropertyType {
     }
     
     public func fromJSON(json: AnyObject) {
-        if let value = json as? T {
-            self.value = value
+        if json is NSNull {
+            self.value = nil
+            return
+        }
+        
+        if json is T {
+            self.value = json as? T
             return
         }
         
         let value = T()
-        if let jsonConvertible = value as? JSONConvertible {
-            jsonConvertible.fromJSON(json)
+        if let convertible = value as? JSONConvertible {
+            convertible.fromJSON(json)
+            self.value = value
         }
-        self.value = value
     }
     
     public func toJSON() -> AnyObject {

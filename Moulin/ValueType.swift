@@ -12,6 +12,7 @@ public protocol ValueType {
     init()
 }
 
+extension Bool: ValueType { }
 extension Int: ValueType { }
 extension Float: ValueType { }
 extension Double: ValueType { }
