@@ -20,14 +20,14 @@ class MoulinTests: XCTestCase {
     }
     
     func testExample() {
+        let json: [String: AnyObject] = ["id": 1, "name": "yuki", "friend" : ["id": 2, "name": "asai"]]
+        
         class User: Entity {
             let id = Property<Int>()
             let name = Property<String>()
             let friend = Property<User>()
         }
-        
         let user = User()
-        let json: [String: AnyObject] = ["id": 1, "name": "yuki", "friend" : ["id": 2, "name": "asai"]]
         user.fromJSON(json)
         
         XCTAssertEqual(user.id.value, 1)
