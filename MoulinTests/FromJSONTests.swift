@@ -33,7 +33,11 @@ class FromJSONTests: XCTestCase {
             "double": 100,
             "doubleNull": NSNull(),
             "doubleInvalid": "10",
-            "undefined": "undefined"]
+            "string": "test",
+            "stringNull": NSNull(),
+            "stringInvalid": 1,
+            "undefined": "undefined"
+        ]
         
         let object = Object(json: json)
         XCTAssertEqual(object.boolTrue.value, true)
@@ -48,6 +52,9 @@ class FromJSONTests: XCTestCase {
         XCTAssertEqual(object.double.value, 100.0)
         XCTAssertNil(object.doubleNull.value)
         XCTAssertNil(object.doubleInvalid.value)
+        XCTAssertEqual(object.string.value, "test")
+        XCTAssertNil(object.stringNull.value)
+        XCTAssertNil(object.stringInvalid.value)
     }
     
     func testNestedEntity() {
@@ -102,6 +109,9 @@ class FromJSONTests: XCTestCase {
         let double = Property<Double>()
         let doubleNull = Property<Double>()
         let doubleInvalid = Property<Double>()
+        let string = Property<String>()
+        let stringNull = Property<String>()
+        let stringInvalid = Property<String>()
         
         let object = Property<Object>()
         let objectNull = Property<Object>()
