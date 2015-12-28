@@ -76,6 +76,19 @@ class FromJSONTests: XCTestCase {
         XCTAssertNil(object.arrayNull.value)
     }
     
+    func testCustomKey() {
+        let json: [String: AnyObject] = [
+            "customKeyIntTests": 1,
+            "customKeyStringTests": "custom",
+            "customKeyArrayTests": [true, false]
+        ]
+        
+        let object = Object(json: json)
+        XCTAssertEqual(object.customKeyInt.value, 1)
+        XCTAssertEqual(object.customKeyString.value, "custom")
+        XCTAssertEqual(object.customKeyArray.value!, [true, false])
+    }
+    
     class Object: Entity {
         let boolTrue = Property<Bool>()
         let boolFalse = Property<Bool>()
@@ -97,6 +110,10 @@ class FromJSONTests: XCTestCase {
         let arrayObject = PropertyArray<Object>()
         let arrayEmpty = PropertyArray<Int>()
         let arrayNull = PropertyArray<Int>()
+        
+        let customKeyInt = Property<Int>(key: "customKeyIntTests")
+        let customKeyString = Property<String>(key: "customKeyStringTests")
+        let customKeyArray = PropertyArray<Bool>(key: "customKeyArrayTests")
     }
     
 }
