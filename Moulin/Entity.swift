@@ -9,6 +9,8 @@
 import Foundation
 
 class Entity: JSONConvertible, ValueType {
+    typealias ReflectedProperty = (label: String, property: PropertyType)
+    
     required init() { }
     
     convenience init(json: AnyObject) {
@@ -16,21 +18,28 @@ class Entity: JSONConvertible, ValueType {
         fromJSON(json)
     }
     
+    private lazy var reflectedProperties: [ReflectedProperty] = {
+        return Mirror(reflecting: self).children.filter { $1 is PropertyType }.flatMap { ($0!, $1 as! PropertyType) }
+    }()
+    
     func fromJSON(json: AnyObject) {
         guard let dic = json as? [String: AnyObject] else {
             // TODO: Imp not dictionary case
             return
         }
-        Mirror(reflecting: self).children.filter { $1 is PropertyType }.flatMap { ($0, $1 as! PropertyType) }.forEach {
-            let key = $1.keyWith($0!)
+        reflectedProperties.forEach {
+            let key = $1.keyWith($0)
             if let value = dic[key] {
                 $1.fromJSON(value)
             }
         }
     }
     
-    func toJSON() -> AnyObject {
-        // TODO: Imp
-        return Int()
+    func toJSON() -> AnyObject? {
+        return reflectedProperties.reduce([String: AnyObject]()) { (var json: [String: AnyObject], reflectedProperty: ReflectedProperty) -> [String: AnyObject] in
+            let key = reflectedProperty.property.keyWith(reflectedProperty.label)
+            json[key] = reflectedProperty.property.toJSON()
+            return json
+        }
     }
 }

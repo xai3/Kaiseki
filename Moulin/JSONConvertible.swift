@@ -10,5 +10,5 @@ import Foundation
 
 public protocol JSONConvertible {
     func fromJSON(json: AnyObject)
-    func toJSON() -> AnyObject
+    func toJSON() -> AnyObject?
 }

@@ -47,8 +47,12 @@ public class PropertyArray<T: ValueType>: PropertyType {
         
     }
     
-    public func toJSON() -> AnyObject {
-        // TODO: Imp
-        return Int()
+    public func toJSON() -> AnyObject? {
+        return self.value?.flatMap { value -> AnyObject? in
+            if let convertible = value as? JSONConvertible {
+                return convertible.toJSON()
+            }
+            return value as? AnyObject
+        }
     }
 }

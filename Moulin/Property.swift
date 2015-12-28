@@ -38,8 +38,10 @@ public class Property<T: ValueType>: PropertyType {
         }
     }
     
-    public func toJSON() -> AnyObject {
-        // TODO: Imp
-        return Int()
+    public func toJSON() -> AnyObject? {
+        if let convertible = value as? JSONConvertible {
+            return convertible.toJSON()
+        }
+        return value as? AnyObject
     }
 }
