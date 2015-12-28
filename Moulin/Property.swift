@@ -8,23 +8,6 @@
 
 import Foundation
 
-protocol PropertyType: JSONConvertible {
-    var key: String? { get }
-    var stringCase: StringCase? { get }
-    
-    func keyWith(key: String) -> String
-}
-
-extension PropertyType {
-    func keyWith(name: String) -> String {
-        if let key = self.key {
-            return key
-        }
-        let stringCase = self.stringCase ?? StringCase.defaultCase
-        return stringCase.convert(name)
-    }
-}
-
 public class Property<T: ValueType>: PropertyType {
     public var value: T?
     
@@ -54,27 +37,3 @@ public class Property<T: ValueType>: PropertyType {
         return Int()
     }
 }
-
-public enum StringCase {
-    case Snake
-    case Camel
-    
-    static var defaultCase: StringCase {
-        return .Snake
-    }
-    
-    func convert(string: String) -> String {
-        // TODO: Imp
-        return string
-    }
-}
-
-public protocol ValueType {
-    init()
-}
-
-extension Int: ValueType { }
-extension Float: ValueType { }
-extension Double: ValueType { }
-extension String: ValueType { }
-

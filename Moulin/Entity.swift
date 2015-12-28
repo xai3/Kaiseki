@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Entity: JSONConvertible {
+class Entity: JSONConvertible, ValueType {
     required init() { }
     
     func fromJSON(json: AnyObject) {
@@ -29,5 +29,3 @@ class Entity: JSONConvertible {
         return Int()
     }
 }
-
-extension Entity: ValueType { }
