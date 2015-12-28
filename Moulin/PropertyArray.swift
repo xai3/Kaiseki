@@ -14,7 +14,8 @@ public class PropertyArray<T: ValueType>: PropertyType {
     var key: String?
     var keyCase: Case?
     
-    public init(key: String? = nil, keyCase: Case? = nil) {
+    public init(_ value: [T]? = nil, key: String? = nil, keyCase: Case? = nil) {
+        self.value = value
         self.key = key
         self.keyCase = keyCase
     }

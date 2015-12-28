@@ -96,6 +96,17 @@ class FromJSONTests: XCTestCase {
         XCTAssertEqual(object.customKeyArray.value!, [true, false])
     }
     
+    func testDefaultValue() {
+        let json: [String: AnyObject] = [:]
+        
+        let object = Object(json: json)
+        XCTAssertEqual(object.boolDefault.value, true)
+        XCTAssertEqual(object.intDefault.value, 100)
+        XCTAssertEqual(object.floatDefault.value, 200)
+        XCTAssertEqual(object.doubleDefault.value, 300)
+        XCTAssertEqual(object.stringDefault.value, "default")
+    }
+    
     class Object: Entity {
         let boolTrue = Property<Bool>()
         let boolFalse = Property<Bool>()
@@ -124,6 +135,13 @@ class FromJSONTests: XCTestCase {
         let customKeyInt = Property<Int>(key: "customKeyIntTests")
         let customKeyString = Property<String>(key: "customKeyStringTests")
         let customKeyArray = PropertyArray<Bool>(key: "customKeyArrayTests")
+        
+        // Default value
+        let boolDefault = Property<Bool>(true)
+        let intDefault = Property<Int>(100)
+        let floatDefault = Property<Float>(Float(200))
+        let doubleDefault = Property<Double>(300)
+        let stringDefault = Property<String>("default")
     }
     
 }
