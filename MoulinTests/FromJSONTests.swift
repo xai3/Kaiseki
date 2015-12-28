@@ -35,8 +35,7 @@ class FromJSONTests: XCTestCase {
             "doubleInvalid": "10",
             "undefined": "undefined"]
         
-        let object = Object()
-        object.fromJSON(json)
+        let object = Object(json: json)
         XCTAssertEqual(object.boolTrue.value, true)
         XCTAssertEqual(object.boolFalse.value, false)
         XCTAssertNil(object.boolNull.value)
@@ -57,8 +56,7 @@ class FromJSONTests: XCTestCase {
             "objectNull": NSNull(),
         ]
         
-        let object = Object()
-        object.fromJSON(json)
+        let object = Object(json: json)
         XCTAssertEqual(object.object.value?.int.value, 1)
         XCTAssertNil(object.objectNull.value)
     }
@@ -71,8 +69,7 @@ class FromJSONTests: XCTestCase {
             "arrayNull": NSNull(),
         ]
         
-        let object = Object()
-        object.fromJSON(json)
+        let object = Object(json: json)
         XCTAssertEqual(object.arrayBool.value!, [true, false, true])
         XCTAssertEqual((object.arrayObject.value?.flatMap { $0.int.value })!, [1, 2])
         XCTAssertEqual(object.arrayEmpty.value!, [])

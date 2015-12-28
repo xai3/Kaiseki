@@ -11,6 +11,11 @@ import Foundation
 class Entity: JSONConvertible, ValueType {
     required init() { }
     
+    convenience init(json: AnyObject) {
+        self.init()
+        fromJSON(json)
+    }
+    
     func fromJSON(json: AnyObject) {
         guard let dic = json as? [String: AnyObject] else {
             // TODO: Imp not dictionary case
