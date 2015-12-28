@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum StringCase {
+public enum Case {
     case Snake
     case Camel
     
-    static var defaultCase: StringCase {
+    static var defaultCase: Case {
         return .Snake
     }
     

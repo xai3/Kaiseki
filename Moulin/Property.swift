@@ -12,11 +12,11 @@ public class Property<T: ValueType>: PropertyType {
     public var value: T?
     
     var key: String?
-    var stringCase: StringCase?
+    var keyCase: Case?
     
-    public init(key: String? = nil, stringCase: StringCase? = nil) {
+    public init(key: String? = nil, keyCase: Case? = nil) {
         self.key = key
-        self.stringCase = stringCase
+        self.keyCase = keyCase
     }
     
     public func fromJSON(json: AnyObject) {

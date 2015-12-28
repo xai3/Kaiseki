@@ -10,7 +10,7 @@ import Foundation
 
 protocol PropertyType: JSONConvertible {
     var key: String? { get }
-    var stringCase: StringCase? { get }
+    var keyCase: Case? { get }
     
     func keyWith(key: String) -> String
 }
@@ -20,7 +20,7 @@ extension PropertyType {
         if let key = self.key {
             return key
         }
-        let stringCase = self.stringCase ?? StringCase.defaultCase
-        return stringCase.convert(name)
+        let keyCase = self.keyCase ?? Case.defaultCase
+        return keyCase.convert(name)
     }
 }
