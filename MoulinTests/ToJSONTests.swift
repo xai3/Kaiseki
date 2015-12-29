@@ -93,4 +93,18 @@ class ToJSONTests: XCTestCase {
         XCTAssertEqual((json["customKeyArrayTests"] as? [Bool])!, [true, false, true])
     }
     
+    func testDefaultValue() {
+        let object = Object()
+        
+        guard let json = object.toJSON() as? [String: AnyObject] else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(json["boolDefault"] as? Bool, true)
+        XCTAssertEqual(json["intDefault"] as? Int, 100)
+        XCTAssertEqual(json["floatDefault"] as? Float, 200)
+        XCTAssertEqual(json["doubleDefault"] as? Double, 300)
+        XCTAssertEqual(json["stringDefault"] as? String, "default")
+    }
+    
 }
