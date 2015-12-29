@@ -46,6 +46,23 @@ class ToJSONTests: XCTestCase {
         XCTAssertNil(json!["doubleNull"])
     }
     
+    func testNestedEntity() {
+        let object = Object()
+        object.object.value = {
+            let object = Object()
+            object.int.value = 1
+            return object
+        }()
+        object.objectNull.value = nil
+        
+        guard let json = object.toJSON() as? [String: AnyObject] else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual((json["object"] as? [String: AnyObject])?["int"] as? Int, 1)
+        XCTAssertNil(json["objectNull"])
+    }
+    
     func testArray() {
         let object = Object()
         object.boolTrue.value = true
