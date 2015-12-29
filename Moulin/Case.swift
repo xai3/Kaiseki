@@ -9,6 +9,7 @@
 import Foundation
 
 public enum Case {
+    case Original
     case Snake
     case Camel
     case Pascal
@@ -19,6 +20,8 @@ public enum Case {
     
     func convert(string: String) -> String {
         switch self {
+        case .Original:
+            return string
         case .Snake:
             return snakeCase(string)
         case .Camel:

@@ -21,6 +21,11 @@ class CaseTests: XCTestCase {
         super.tearDown()
     }
     
+    func testOriginal() {
+        XCTAssertEqual(Case.Original.convert("intValue"), "intValue")
+        XCTAssertEqual(Case.Original.convert("int_value"), "int_value")
+    }
+    
     func testSnakeCase() {
         XCTAssertEqual(Case.Snake.convert("intValue"), "int_value")
         XCTAssertEqual(Case.Snake.convert("intValueMax"), "int_value_max")
