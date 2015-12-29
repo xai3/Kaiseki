@@ -78,4 +78,19 @@ class ToJSONTests: XCTestCase {
         XCTAssertEqual((json!["arrayObject"] as? [[String: AnyObject]])!.flatMap { $0["int"] as? Int }, [1, 2])
     }
     
+    func testCustomKey() {
+        let object = Object()
+        object.customKeyInt.value = 1
+        object.customKeyString.value = "custom"
+        object.customKeyArray.value = [true, false, true]
+        
+        guard let json = object.toJSON() as? [String: AnyObject] else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(json["customKeyIntTests"] as? Int, 1)
+        XCTAssertEqual(json["customKeyStringTests"] as? String, "custom")
+        XCTAssertEqual((json["customKeyArrayTests"] as? [Bool])!, [true, false, true])
+    }
+    
 }
