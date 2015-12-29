@@ -49,9 +49,9 @@ class Object: Entity {
     let arrayEmpty = PropertyArray<Int>()
     let arrayNull = PropertyArray<Int>()
     
-    let customKeyInt = Property<Int>(key: "customKeyIntTests")
-    let customKeyString = Property<String>(key: "customKeyStringTests")
-    let customKeyArray = PropertyArray<Bool>(key: "customKeyArrayTests")
+    let customKeyInt = Property<Int>(key: "custom_key_int_tests")
+    let customKeyString = Property<String>(key: "custom_key_string_tests")
+    let customKeyArray = PropertyArray<Bool>(key: "custom_key_array_tests")
     
     // Default value
     let boolDefault = Property<Bool>(true)

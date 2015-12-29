@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464AA7F11C3247B60083F170 /* CaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AA7F01C3247B60083F170 /* CaseTests.swift */; };
 		467D2D861C3019080088E33D /* Moulin.h in Headers */ = {isa = PBXBuildFile; fileRef = 467D2D851C3019080088E33D /* Moulin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		467D2D8D1C3019080088E33D /* Moulin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467D2D821C3019070088E33D /* Moulin.framework */; };
 		467D2D921C3019080088E33D /* MoulinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D2D911C3019080088E33D /* MoulinTests.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		464AA7F01C3247B60083F170 /* CaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseTests.swift; sourceTree = "<group>"; };
 		467D2D821C3019070088E33D /* Moulin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moulin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D2D851C3019080088E33D /* Moulin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Moulin.h; sourceTree = "<group>"; };
 		467D2D871C3019080088E33D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				467D2D911C3019080088E33D /* MoulinTests.swift */,
 				46AB09351C30CCDA00705906 /* FromJSONTests.swift */,
 				46A12AB41C313B9A004517B6 /* ToJSONTests.swift */,
+				464AA7F01C3247B60083F170 /* CaseTests.swift */,
 				467D2D931C3019080088E33D /* Info.plist */,
 			);
 			path = MoulinTests;
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46A12AB51C313B9A004517B6 /* ToJSONTests.swift in Sources */,
+				464AA7F11C3247B60083F170 /* CaseTests.swift in Sources */,
 				467D2D921C3019080088E33D /* MoulinTests.swift in Sources */,
 				46AB09361C30CCDA00705906 /* FromJSONTests.swift in Sources */,
 			);

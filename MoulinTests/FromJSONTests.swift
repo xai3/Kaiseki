@@ -21,21 +21,21 @@ class FromJSONTests: XCTestCase {
     
     func testBasicValueType() {
         let json: [String: AnyObject] = [
-            "boolTrue": true,
-            "boolFalse": false,
-            "boolNull": NSNull(),
+            "bool_true": true,
+            "bool_false": false,
+            "bool_null": NSNull(),
             "int": 1,
-            "intNull": NSNull(),
-            "intInvalid": "1",
+            "int_null": NSNull(),
+            "int_invalid": "1",
             "float": 10,
-            "floatNull": NSNull(),
-            "floatInvalid": "10",
+            "float_null": NSNull(),
+            "float_invalid": "10",
             "double": 100,
-            "doubleNull": NSNull(),
-            "doubleInvalid": "10",
+            "double_null": NSNull(),
+            "double_invalid": "10",
             "string": "test",
-            "stringNull": NSNull(),
-            "stringInvalid": 1,
+            "string_null": NSNull(),
+            "string_invalid": 1,
             "undefined": "undefined"
         ]
         
@@ -60,7 +60,7 @@ class FromJSONTests: XCTestCase {
     func testNestedEntity() {
         let json: [String: AnyObject] = [
             "object": ["int": 1,],
-            "objectNull": NSNull(),
+            "object_null": NSNull(),
         ]
         
         let object = Object(json: json)
@@ -70,10 +70,10 @@ class FromJSONTests: XCTestCase {
     
     func testArray() {
         let json: [String: AnyObject] = [
-            "arrayBool": [true, false, true],
-            "arrayObject": [["int": 1], ["int": 2]],
-            "arrayEmpty": [],
-            "arrayNull": NSNull(),
+            "array_bool": [true, false, true],
+            "array_object": [["int": 1], ["int": 2]],
+            "array_empty": [],
+            "array_null": NSNull(),
         ]
         
         let object = Object(json: json)
@@ -85,9 +85,9 @@ class FromJSONTests: XCTestCase {
     
     func testCustomKey() {
         let json: [String: AnyObject] = [
-            "customKeyIntTests": 1,
-            "customKeyStringTests": "custom",
-            "customKeyArrayTests": [true, false]
+            "custom_key_int_tests": 1,
+            "custom_key_string_tests": "custom",
+            "custom_key_array_tests": [true, false]
         ]
         
         let object = Object(json: json)

@@ -35,15 +35,15 @@ class ToJSONTests: XCTestCase {
         
         let json = object.toJSON() as? [String: AnyObject]
         XCTAssertNotNil(json)
-        XCTAssertEqual(json!["boolTrue"] as? Bool, true)
-        XCTAssertEqual(json!["boolFalse"] as? Bool, false)
-        XCTAssertNil(json!["boolNull"])
+        XCTAssertEqual(json!["bool_true"] as? Bool, true)
+        XCTAssertEqual(json!["bool_false"] as? Bool, false)
+        XCTAssertNil(json!["bool_null"])
         XCTAssertEqual(json!["int"] as? Int, 1)
-        XCTAssertNil(json!["intNull"])
+        XCTAssertNil(json!["int_null"])
         XCTAssertEqual(json!["float"] as? Float, 10)
-        XCTAssertNil(json!["floatNull"])
+        XCTAssertNil(json!["float_null"])
         XCTAssertEqual(json!["double"] as? Double, 100)
-        XCTAssertNil(json!["doubleNull"])
+        XCTAssertNil(json!["double_null"])
     }
     
     func testNestedEntity() {
@@ -60,7 +60,7 @@ class ToJSONTests: XCTestCase {
             return
         }
         XCTAssertEqual((json["object"] as? [String: AnyObject])?["int"] as? Int, 1)
-        XCTAssertNil(json["objectNull"])
+        XCTAssertNil(json["object_null"])
     }
     
     func testArray() {
@@ -74,8 +74,8 @@ class ToJSONTests: XCTestCase {
         }
         
         let json = object.toJSON() as? [String: AnyObject]
-        XCTAssertEqual((json!["arrayBool"] as? [Bool])!, [true, false, true])
-        XCTAssertEqual((json!["arrayObject"] as? [[String: AnyObject]])!.flatMap { $0["int"] as? Int }, [1, 2])
+        XCTAssertEqual((json!["array_bool"] as? [Bool])!, [true, false, true])
+        XCTAssertEqual((json!["array_object"] as? [[String: AnyObject]])!.flatMap { $0["int"] as? Int }, [1, 2])
     }
     
     func testCustomKey() {
@@ -88,9 +88,9 @@ class ToJSONTests: XCTestCase {
             XCTFail()
             return
         }
-        XCTAssertEqual(json["customKeyIntTests"] as? Int, 1)
-        XCTAssertEqual(json["customKeyStringTests"] as? String, "custom")
-        XCTAssertEqual((json["customKeyArrayTests"] as? [Bool])!, [true, false, true])
+        XCTAssertEqual(json["custom_key_int_tests"] as? Int, 1)
+        XCTAssertEqual(json["custom_key_string_tests"] as? String, "custom")
+        XCTAssertEqual((json["custom_key_array_tests"] as? [Bool])!, [true, false, true])
     }
     
     func testDefaultValue() {
@@ -100,11 +100,11 @@ class ToJSONTests: XCTestCase {
             XCTFail()
             return
         }
-        XCTAssertEqual(json["boolDefault"] as? Bool, true)
-        XCTAssertEqual(json["intDefault"] as? Int, 100)
-        XCTAssertEqual(json["floatDefault"] as? Float, 200)
-        XCTAssertEqual(json["doubleDefault"] as? Double, 300)
-        XCTAssertEqual(json["stringDefault"] as? String, "default")
+        XCTAssertEqual(json["bool_default"] as? Bool, true)
+        XCTAssertEqual(json["int_default"] as? Int, 100)
+        XCTAssertEqual(json["float_default"] as? Float, 200)
+        XCTAssertEqual(json["double_default"] as? Double, 300)
+        XCTAssertEqual(json["string_default"] as? String, "default")
     }
     
 }

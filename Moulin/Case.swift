@@ -29,8 +29,12 @@ public enum Case {
     }
     
     private func snakeCase(string: String) -> String {
-        // TODO: Imp
-        return string
+        return ["[A-Z]{1}[a-z0-9]+", "[A-Z]{2,}"]
+            .reduce(string) {
+                return $0.stringByReplacingOccurrencesOfString($1, withString: "_$0", options: .RegularExpressionSearch, range: nil)
+            }
+            .lowercaseString
+            .stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "_"))
     }
     
     private func camelCase(string: String) -> String {
