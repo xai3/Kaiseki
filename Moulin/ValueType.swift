@@ -12,6 +12,7 @@ public protocol ValueType {
     init()
     
     static func valueFromJSON(json: AnyObject?) -> Self?
+    func valueToJSON() -> AnyObject?
     
     // For Optional<Wrapped>
     static var isOptional: Bool { get }
@@ -20,6 +21,10 @@ public protocol ValueType {
 extension ValueType {
     public static func valueFromJSON(json: AnyObject?) -> Self? {
         return json as? Self
+    }
+    
+    public func valueToJSON() -> AnyObject? {
+        return self as? AnyObject
     }
     
     public static var isOptional: Bool {
@@ -44,6 +49,18 @@ extension Optional: ValueType {
         return .Some(.Some(wrapped))
     }
     
+    public func valueToJSON() -> AnyObject? {
+        switch self {
+        case .Some(let wrapped):
+            guard let value = wrapped as? ValueType else {
+                return nil
+            }
+            return value.valueToJSON()
+        case .None:
+            return nil
+        }
+    }
+    
     public static var isOptional: Bool {
         return true
     }
@@ -60,5 +77,14 @@ extension Array: ValueType {
         }
         
         return arr.flatMap { valueType.valueFromJSON($0) as? Element }
+    }
+    
+    public func valueToJSON() -> AnyObject? {
+        return flatMap { element -> AnyObject? in
+            guard let value = element as? ValueType else {
+                return nil
+            }
+            return value.valueToJSON()
+        }
     }
 }

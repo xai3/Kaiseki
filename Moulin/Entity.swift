@@ -35,6 +35,10 @@ public class Entity: JSONConvertible, ValueType {
         entity.fromJSON(unwrappedJson)
         return entity as? T
     }
+    
+    public func valueToJSON() -> AnyObject? {
+        return toJSON()
+    }
    
     public func fromJSON(json: AnyObject) {
         guard let dic = json as? [String: AnyObject] else {
