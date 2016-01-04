@@ -64,7 +64,7 @@ class FromJSONTests: XCTestCase {
         ]
         
         let object = Object(json: json)
-        XCTAssertEqual(object.object.value?.int.value, 1)
+        XCTAssertEqual(object.object.value!.int.value, 1)
         XCTAssertNil(object.objectNull.value)
     }
     

@@ -22,6 +22,20 @@ public class Entity: JSONConvertible, ValueType {
         return Mirror(reflecting: self).children.filter { $1 is PropertyType }.flatMap { ($0!, $1 as! PropertyType) }
     }()
     
+    
+    public static func valueFromJSON(json: AnyObject?) -> Self? {
+        return valueFromJSONHelper(json)
+    }
+    
+    private static func valueFromJSONHelper<T>(json: AnyObject?) -> T? {
+        guard let unwrappedJson = json else {
+            return nil
+        }
+        let entity = self.init()
+        entity.fromJSON(unwrappedJson)
+        return entity as? T
+    }
+   
     public func fromJSON(json: AnyObject) {
         guard let dic = json as? [String: AnyObject] else {
             // TODO: Imp not dictionary case

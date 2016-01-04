@@ -10,10 +10,61 @@ import Foundation
 
 public protocol ValueType {
     init()
+    
+    static func valueFromJSON(json: AnyObject?) -> Self?
+    
+    // For Optional<Wrapped>
+    static var isOptional: Bool { get }
 }
 
-extension Bool: ValueType { }
-extension Int: ValueType { }
-extension Float: ValueType { }
-extension Double: ValueType { }
-extension String: ValueType { }
+extension ValueType {
+    public static var isOptional: Bool {
+        return false
+    }
+}
+
+
+extension Bool: ValueType {
+    public static func valueFromJSON(json: AnyObject?) -> Bool? {
+        return json as? Bool
+    }
+}
+
+extension Int: ValueType {
+    public static func valueFromJSON(json: AnyObject?) -> Int? {
+        return json as? Int
+    }
+}
+
+extension Float: ValueType {
+    public static func valueFromJSON(json: AnyObject?) -> Float? {
+        return json as? Float
+    }
+}
+
+extension Double: ValueType {
+    public static func valueFromJSON(json: AnyObject?) -> Double? {
+        return json as? Double
+    }
+}
+
+extension String: ValueType {
+    public static func valueFromJSON(json: AnyObject?) -> String? {
+        return json as? String
+    }
+}
+
+extension Optional: ValueType {
+    public static func valueFromJSON(json: AnyObject?) -> Wrapped?? {
+        guard let valueType = Wrapped.self as? ValueType.Type,
+            let value = valueType.valueFromJSON(json),
+            let wrapped = value as? Wrapped else {
+                return .Some(.None)
+        }
+        return .Some(.Some(wrapped))
+    }
+    
+    public static var isOptional: Bool {
+        return true
+    }
+}
