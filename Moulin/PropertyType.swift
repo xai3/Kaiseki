@@ -8,11 +8,14 @@
 
 import Foundation
 
-protocol PropertyType: JSONConvertible {
+protocol PropertyType {
     var key: String? { get }
     var keyCase: Case? { get }
     
     func keyWith(key: String) -> String
+    
+    func fromJSON(json: AnyObject)
+    func toJSON() -> AnyObject?
 }
 
 extension PropertyType {

@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class Entity: JSONConvertible, ValueType {
+public class Entity: ValueType {
     typealias ReflectedProperty = (label: String, property: PropertyType)
     
     required public init() { }
     
     convenience init(json: AnyObject) {
         self.init()
-        fromJSON(json)
+        fromJSONInternal(json)
     }
     
     private lazy var reflectedProperties: [ReflectedProperty] = {
@@ -23,24 +23,20 @@ public class Entity: JSONConvertible, ValueType {
     }()
     
     
-    public static func valueFromJSON(json: AnyObject?) -> Self? {
-        return valueFromJSONHelper(json)
+    public static func fromJSON(json: AnyObject?) -> Self? {
+        return fromJSONGenericHelper(json)
     }
     
-    private static func valueFromJSONHelper<T>(json: AnyObject?) -> T? {
+    private static func fromJSONGenericHelper<T>(json: AnyObject?) -> T? {
         guard let unwrappedJson = json else {
             return nil
         }
         let entity = self.init()
-        entity.fromJSON(unwrappedJson)
+        entity.fromJSONInternal(unwrappedJson)
         return entity as? T
     }
     
-    public func valueToJSON() -> AnyObject? {
-        return toJSON()
-    }
-   
-    public func fromJSON(json: AnyObject) {
+    private func fromJSONInternal(json: AnyObject) {
         guard let dic = json as? [String: AnyObject] else {
             // TODO: Imp not dictionary case
             return

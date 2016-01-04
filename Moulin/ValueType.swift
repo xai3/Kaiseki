@@ -11,19 +11,19 @@ import Foundation
 public protocol ValueType {
     init()
     
-    static func valueFromJSON(json: AnyObject?) -> Self?
-    func valueToJSON() -> AnyObject?
+    static func fromJSON(json: AnyObject?) -> Self?
+    func toJSON() -> AnyObject?
     
     // For Optional<Wrapped>
     static var isOptional: Bool { get }
 }
 
 extension ValueType {
-    public static func valueFromJSON(json: AnyObject?) -> Self? {
+    public static func fromJSON(json: AnyObject?) -> Self? {
         return json as? Self
     }
     
-    public func valueToJSON() -> AnyObject? {
+    public func toJSON() -> AnyObject? {
         return self as? AnyObject
     }
     
@@ -40,22 +40,22 @@ extension Double: ValueType { }
 extension String: ValueType { }
 
 extension Optional: ValueType {
-    public static func valueFromJSON(json: AnyObject?) -> Wrapped?? {
+    public static func fromJSON(json: AnyObject?) -> Wrapped?? {
         guard let valueType = Wrapped.self as? ValueType.Type,
-            let value = valueType.valueFromJSON(json),
+            let value = valueType.fromJSON(json),
             let wrapped = value as? Wrapped else {
                 return .Some(.None)
         }
         return .Some(.Some(wrapped))
     }
     
-    public func valueToJSON() -> AnyObject? {
+    public func toJSON() -> AnyObject? {
         switch self {
         case .Some(let wrapped):
             guard let value = wrapped as? ValueType else {
                 return nil
             }
-            return value.valueToJSON()
+            return value.toJSON()
         case .None:
             return nil
         }
@@ -67,7 +67,7 @@ extension Optional: ValueType {
 }
 
 extension Array: ValueType {
-    public static func valueFromJSON(json: AnyObject?) -> [Element]? {
+    public static func fromJSON(json: AnyObject?) -> [Element]? {
         guard let arr = json as? [AnyObject] else {
             return nil
         }
@@ -76,15 +76,15 @@ extension Array: ValueType {
             return nil
         }
         
-        return arr.flatMap { valueType.valueFromJSON($0) as? Element }
+        return arr.flatMap { valueType.fromJSON($0) as? Element }
     }
     
-    public func valueToJSON() -> AnyObject? {
+    public func toJSON() -> AnyObject? {
         return flatMap { element -> AnyObject? in
             guard let value = element as? ValueType else {
                 return nil
             }
-            return value.valueToJSON()
+            return value.toJSON()
         }
     }
 }
