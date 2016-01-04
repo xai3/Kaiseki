@@ -99,7 +99,13 @@ class FromJSONTests: XCTestCase {
     }
     
     func testDefaultValue() {
-        let json: [String: AnyObject] = [:]
+        let json: [String: AnyObject] = [
+            "bool_default": NSNull(),
+            "int_default": NSNull(),
+            "float_default": NSNull(),
+            "double_default": NSNull(),
+            "string_default": NSNull(),
+        ]
         
         let object = Object(json: json)
         XCTAssertEqual(object.boolDefault.value, true)
