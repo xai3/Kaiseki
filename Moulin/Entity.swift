@@ -6,8 +6,6 @@
 //  Copyright © 2015年 yukiasai. All rights reserved.
 //
 
-import Foundation
-
 public class Entity: ValueType {
     typealias ReflectedProperty = (label: String, property: PropertyType)
     

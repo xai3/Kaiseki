@@ -6,8 +6,6 @@
 //  Copyright © 2015年 yukiasai. All rights reserved.
 //
 
-import Foundation
-
 public protocol ValueType {
     init()
     

@@ -6,8 +6,6 @@
 //  Copyright © 2015年 yukiasai. All rights reserved.
 //
 
-import Foundation
-
 public class Property<T: ValueType>: PropertyType {
     public typealias Value = T
     public typealias ValueChanged = (Property<Value>, Value) -> Void
