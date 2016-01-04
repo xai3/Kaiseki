@@ -107,4 +107,25 @@ class FromJSONTests: XCTestCase {
         XCTAssertEqual(object.stringDefault.value, "default")
     }
     
+    func testValueChanged() {
+        var called1 = false
+        var called2 = false
+        
+        let object = Object()
+        object.boolTrue.valueChanged = { property, value in
+            called1 = true
+            XCTAssertEqual(value, true)
+        }
+        object.arrayBool.valueChanged = { property, value in
+            called2 = true
+            XCTAssertEqual(value!, [true, false, true])
+        }
+        
+        object.boolTrue.value = true
+        object.arrayBool.value = [true, false, true]
+        
+        XCTAssertTrue(called1)
+        XCTAssertTrue(called2)
+    }
+    
 }

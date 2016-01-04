@@ -9,15 +9,24 @@
 import Foundation
 
 public class Property<T: ValueType>: PropertyType {
-    public var value: T?
+    public typealias Value = T
+    public typealias ValueChanged = (Property<Value>, Value?) -> Void
+    
+    public var value: Value? {
+        didSet {
+            valueChanged?(self, value)
+        }
+    }
     
     var key: String?
     var keyCase: Case?
+    var valueChanged: ValueChanged?
     
-    public init(_ value: T? = nil, key: String? = nil, keyCase: Case? = nil) {
+    public init(_ value: Value? = nil, key: String? = nil, keyCase: Case? = nil, valueChanged: ValueChanged? = nil) {
         self.value = value
         self.key = key
         self.keyCase = keyCase
+        self.valueChanged = valueChanged
     }
     
     public func fromJSON(json: AnyObject) {
@@ -27,7 +36,7 @@ public class Property<T: ValueType>: PropertyType {
         }
         
         if json is T {
-            self.value = json as? T
+            self.value = json as? Value
             return
         }
         

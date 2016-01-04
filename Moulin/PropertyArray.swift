@@ -9,15 +9,25 @@
 import Foundation
 
 public class PropertyArray<T: ValueType>: PropertyType {
-    public var value: [T]?
+    public typealias Element = T
+    public typealias Value = [Element]
+    public typealias ValueChanged = (PropertyArray<Element>, Value?) -> Void
+    
+    public var value: Value? {
+        didSet {
+            valueChanged?(self, value)
+        }
+    }
     
     var key: String?
     var keyCase: Case?
+    var valueChanged: ValueChanged?
     
-    public init(_ value: [T]? = nil, key: String? = nil, keyCase: Case? = nil) {
+    public init(_ value: Value? = nil, key: String? = nil, keyCase: Case? = nil, valueChanged: ValueChanged? = nil) {
         self.value = value
         self.key = key
         self.keyCase = keyCase
+        self.valueChanged = valueChanged
     }
     
     public func fromJSON(json: AnyObject) {
@@ -27,7 +37,7 @@ public class PropertyArray<T: ValueType>: PropertyType {
         }
         
         if json is [T] {
-            self.value = json as? [T]
+            self.value = json as? Value
             return
         }
         
@@ -36,7 +46,7 @@ public class PropertyArray<T: ValueType>: PropertyType {
             return
         }
         
-        self.value = arr.flatMap { json -> T? in
+        self.value = arr.flatMap { json -> Element? in
             let value = T()
             if let convertible = value as? JSONConvertible {
                 convertible.fromJSON(json)
