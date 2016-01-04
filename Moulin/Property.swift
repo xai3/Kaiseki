@@ -31,10 +31,8 @@ public class Property<T: ValueType>: PropertyType {
     
     public func fromJSON(json: AnyObject) {
         if json is NSNull {
-            if Value.isOptional {
-                if let value = Value.fromJSON(nil) {
-                    self.value = value
-                }
+            if let value = Value.fromJSON(nil) where Value.isOptional {
+                self.value = value
             }
             return
         }
