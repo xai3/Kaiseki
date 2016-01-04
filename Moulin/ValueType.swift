@@ -18,41 +18,21 @@ public protocol ValueType {
 }
 
 extension ValueType {
+    public static func valueFromJSON(json: AnyObject?) -> Self? {
+        return json as? Self
+    }
+    
     public static var isOptional: Bool {
         return false
     }
 }
 
 
-extension Bool: ValueType {
-    public static func valueFromJSON(json: AnyObject?) -> Bool? {
-        return json as? Bool
-    }
-}
-
-extension Int: ValueType {
-    public static func valueFromJSON(json: AnyObject?) -> Int? {
-        return json as? Int
-    }
-}
-
-extension Float: ValueType {
-    public static func valueFromJSON(json: AnyObject?) -> Float? {
-        return json as? Float
-    }
-}
-
-extension Double: ValueType {
-    public static func valueFromJSON(json: AnyObject?) -> Double? {
-        return json as? Double
-    }
-}
-
-extension String: ValueType {
-    public static func valueFromJSON(json: AnyObject?) -> String? {
-        return json as? String
-    }
-}
+extension Bool: ValueType { }
+extension Int: ValueType { }
+extension Float: ValueType { }
+extension Double: ValueType { }
+extension String: ValueType { }
 
 extension Optional: ValueType {
     public static func valueFromJSON(json: AnyObject?) -> Wrapped?? {
