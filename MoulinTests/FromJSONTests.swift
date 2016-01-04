@@ -73,13 +73,15 @@ class FromJSONTests: XCTestCase {
             "array_bool": [true, false, true],
             "array_object": [["int": 1], ["int": 2]],
             "array_empty": [],
+            "array_invalid": ["a", "b", "c"],
             "array_null": NSNull(),
         ]
         
         let object = Object(json: json)
-        XCTAssertEqual(object.arrayBool.value!, [true, false, true])
-        XCTAssertEqual((object.arrayObject.value?.flatMap { $0.int.value })!, [1, 2])
-        XCTAssertEqual(object.arrayEmpty.value!, [])
+        XCTAssertEqual(object.arrayBool.value, [true, false, true])
+        XCTAssertEqual((object.arrayObject.value.flatMap { $0.int.value }), [1, 2])
+        XCTAssertEqual(object.arrayEmpty.value, [])
+        XCTAssertEqual(object.arrayInvalid.value, [])
         XCTAssertNil(object.arrayNull.value)
     }
     
@@ -93,7 +95,7 @@ class FromJSONTests: XCTestCase {
         let object = Object(json: json)
         XCTAssertEqual(object.customKeyInt.value, 1)
         XCTAssertEqual(object.customKeyString.value, "custom")
-        XCTAssertEqual(object.customKeyArray.value!, [true, false])
+        XCTAssertEqual(object.customKeyArray.value, [true, false])
     }
     
     func testDefaultValue() {
@@ -118,7 +120,7 @@ class FromJSONTests: XCTestCase {
         }
         object.arrayBool.valueChanged = { property, value in
             called2 = true
-            XCTAssertEqual(value!, [true, false, true])
+            XCTAssertEqual(value, [true, false, true])
         }
         
         object.boolTrue.value = true

@@ -44,14 +44,15 @@ class Object: Entity {
     let object = Property<Object?>()
     let objectNull = Property<Object?>()
     
-    let arrayBool = PropertyArray<Bool>()
-    let arrayObject = PropertyArray<Object>()
-    let arrayEmpty = PropertyArray<Int>()
-    let arrayNull = PropertyArray<Int>()
+    let arrayBool = Property<[Bool]>()
+    let arrayObject = Property<[Object]>()
+    let arrayEmpty = Property<[Int]>()
+    let arrayInvalid = Property<[Int]>()
+    let arrayNull = Property<[Int]?>([1, 2, 3])
     
     let customKeyInt = Property<Int>(key: "custom_key_int_tests")
     let customKeyString = Property<String>(key: "custom_key_string_tests")
-    let customKeyArray = PropertyArray<Bool>(key: "custom_key_array_tests")
+    let customKeyArray = Property<[Bool]>(key: "custom_key_array_tests")
     
     // Default value
     let boolDefault = Property<Bool>(true)

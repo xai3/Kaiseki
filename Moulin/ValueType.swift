@@ -68,3 +68,17 @@ extension Optional: ValueType {
         return true
     }
 }
+
+extension Array: ValueType {
+    public static func valueFromJSON(json: AnyObject?) -> [Element]? {
+        guard let arr = json as? [AnyObject] else {
+            return nil
+        }
+        
+        guard let valueType = Element.self as? ValueType.Type else {
+            return nil
+        }
+        
+        return arr.flatMap { valueType.valueFromJSON($0) as? Element }
+    }
+}
