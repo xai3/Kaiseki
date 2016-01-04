@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Entity: JSONConvertible, ValueType {
+public class Entity: JSONConvertible, ValueType {
     typealias ReflectedProperty = (label: String, property: PropertyType)
     
-    required init() { }
+    required public init() { }
     
     convenience init(json: AnyObject) {
         self.init()
@@ -22,7 +22,7 @@ class Entity: JSONConvertible, ValueType {
         return Mirror(reflecting: self).children.filter { $1 is PropertyType }.flatMap { ($0!, $1 as! PropertyType) }
     }()
     
-    func fromJSON(json: AnyObject) {
+    public func fromJSON(json: AnyObject) {
         guard let dic = json as? [String: AnyObject] else {
             // TODO: Imp not dictionary case
             return
@@ -35,7 +35,7 @@ class Entity: JSONConvertible, ValueType {
         }
     }
     
-    func toJSON() -> AnyObject? {
+    public func toJSON() -> AnyObject? {
         return reflectedProperties.reduce([String: AnyObject]()) { (var json: [String: AnyObject], reflectedProperty: ReflectedProperty) -> [String: AnyObject] in
             let key = reflectedProperty.property.keyWith(reflectedProperty.label)
             json[key] = reflectedProperty.property.toJSON()
