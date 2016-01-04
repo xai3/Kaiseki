@@ -38,6 +38,8 @@ extension Double: ValueType { }
 extension String: ValueType { }
 
 extension Optional: ValueType {
+    // TODO: where Wrapped: ValueType
+    
     public static func fromJSON(json: AnyObject?) -> Wrapped?? {
         guard let valueType = Wrapped.self as? ValueType.Type,
             let value = valueType.fromJSON(json),
@@ -65,6 +67,8 @@ extension Optional: ValueType {
 }
 
 extension Array: ValueType {
+    // TODO: where Element: ValueType
+    
     public static func fromJSON(json: AnyObject?) -> [Element]? {
         guard let arr = json as? [AnyObject] else {
             return nil
