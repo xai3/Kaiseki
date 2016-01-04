@@ -22,11 +22,22 @@ public class Entity: ValueType {
         return Mirror(reflecting: self).children.filter { $1 is PropertyType }.flatMap { ($0!, $1 as! PropertyType) }
     }()
     
-    
     public static func fromJSON(json: AnyObject?) -> Self? {
         return fromJSONGenericHelper(json)
     }
     
+    public func toJSON() -> AnyObject? {
+        return reflectedProperties.reduce([String: AnyObject]()) { (var json: [String: AnyObject], reflectedProperty: ReflectedProperty) -> [String: AnyObject] in
+            let key = reflectedProperty.property.keyWith(reflectedProperty.label)
+            json[key] = reflectedProperty.property.toJSON()
+            return json
+        }
+    }
+}
+
+// MARK: Private method
+
+extension Entity {
     private static func fromJSONGenericHelper<T>(json: AnyObject?) -> T? {
         guard let unwrappedJson = json else {
             return nil
@@ -46,14 +57,6 @@ public class Entity: ValueType {
             if let value = dic[key] {
                 $1.fromJSON(value)
             }
-        }
-    }
-    
-    public func toJSON() -> AnyObject? {
-        return reflectedProperties.reduce([String: AnyObject]()) { (var json: [String: AnyObject], reflectedProperty: ReflectedProperty) -> [String: AnyObject] in
-            let key = reflectedProperty.property.keyWith(reflectedProperty.label)
-            json[key] = reflectedProperty.property.toJSON()
-            return json
         }
     }
 }
