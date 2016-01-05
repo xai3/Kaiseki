@@ -60,4 +60,8 @@ class Object: Entity {
     let floatDefault = Property<Float>(Float(200))
     let doubleDefault = Property<Double>(300)
     let stringDefault = Property<String>("default")
+    
+    // Filled with null
+    let filledWithNull = Property<Int?>(filledWithNull: true)
+    let filledWithNullNonOpt = Property<Int>(filledWithNull: true)
 }

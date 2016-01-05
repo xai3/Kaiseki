@@ -19,12 +19,14 @@ public class Property<Value: ValueType>: PropertyType {
     
     var key: String?
     var keyCase: Case?
+    var filledWithNull: Bool
     var valueChanged: ValueChanged?
     
-    public init(_ value: Value = Value(), key: String? = nil, keyCase: Case? = nil, valueChanged: ValueChanged? = nil) {
+    public init(_ value: Value = Value(), key: String? = nil, keyCase: Case? = nil, filledWithNull: Bool = false, valueChanged: ValueChanged? = nil) {
         self.value = value
         self.key = key
         self.keyCase = keyCase
+        self.filledWithNull = filledWithNull
         self.valueChanged = valueChanged
     }
     
@@ -42,6 +44,14 @@ public class Property<Value: ValueType>: PropertyType {
     }
     
     public func toJSON() -> AnyObject? {
-        return value.toJSON()
+        if let json = value.toJSON() {
+            return json
+        }
+        
+        if filledWithNull && Value.isOptional {
+            return NSNull()
+        }
+        
+        return nil
     }
 }

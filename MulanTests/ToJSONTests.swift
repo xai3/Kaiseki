@@ -107,4 +107,19 @@ class ToJSONTests: XCTestCase {
         XCTAssertEqual(json["string_default"] as? String, "default")
     }
     
+    func testFilledWithNull() {
+        let object = Object()
+        object.intNull.value = nil
+        object.filledWithNull.value = nil
+        object.filledWithNullNonOpt.value = 0
+        
+        guard let json = object.toJSON() as? [String: AnyObject] else {
+            XCTFail()
+            return
+        }
+        XCTAssertNil(json["int_null"])
+        XCTAssertNotNil(json["filled_with_null"] as? NSNull)
+        XCTAssertNil(json["filled_with_null_non_opt"] as? NSNull)
+    }
+    
 }
