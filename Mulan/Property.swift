@@ -8,8 +8,7 @@
 
 import Foundation
 
-public class Property<T: ValueType>: PropertyType {
-    public typealias Value = T
+public class Property<Value: ValueType>: PropertyType {
     public typealias ValueChanged = (Property<Value>, Value) -> Void
     
     public var value: Value {
