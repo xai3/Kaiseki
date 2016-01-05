@@ -136,4 +136,21 @@ class FromJSONTests: XCTestCase {
         XCTAssertTrue(called2)
     }
     
+    func testEnum() {
+        let json: [String: AnyObject] = [
+            "object_type_one": 0,
+            "object_type_two": 1,
+            "object_type_else": 100,
+            "object_type_opt_null": NSNull(),
+            "object_type_opt_one": 0,
+        ]
+        let object = Object(json: json)
+        XCTAssertEqual(object.objectTypeOne.value, ObjectType.One)
+        XCTAssertEqual(object.objectTypeTwo.value, ObjectType.Two)
+        XCTAssertEqual(object.objectTypeElse.value, ObjectType.Unknown)
+        XCTAssertNil(object.objectTypeOpt.value)
+        XCTAssertNil(object.objectTypeOptNull.value)
+        XCTAssertEqual(object.objectTypeOptOne.value, ObjectType.One)
+    }
+    
 }

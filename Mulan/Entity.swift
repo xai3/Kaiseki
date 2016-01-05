@@ -20,6 +20,10 @@ public class Entity: ValueType {
         return Mirror(reflecting: self).children.filter { $1 is PropertyType }.flatMap { ($0!, $1 as! PropertyType) }
     }()
     
+    public static func defaultValue() -> Self {
+        return self.init()
+    }
+    
     public static func fromJSON(json: AnyObject?) -> Self? {
         return fromJSONGenericHelper(json)
     }
