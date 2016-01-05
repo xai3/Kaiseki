@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Moulin.xcodeproj">
+      location = "self:/Users/asai/develop/ios/Mulan/Mulan.xcodeproj">
    </FileRef>
 </Workspace>

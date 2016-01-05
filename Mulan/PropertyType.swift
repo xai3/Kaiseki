@@ -1,6 +1,6 @@
 //
 //  PropertyType.swift
-//  Moulin
+//  Mulan
 //
 //  Created by Asai.Yuki on 2015/12/28.
 //  Copyright © 2015年 yukiasai. All rights reserved.

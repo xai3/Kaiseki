@@ -1,6 +1,6 @@
 //
 //  CaseTests.swift
-//  Moulin
+//  Mulan
 //
 //  Created by asai.yuki on 2015/12/29.
 //  Copyright © 2015年 yukiasai. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 
 import XCTest
-@testable import Moulin
+@testable import Mulan
 
 class CaseTests: XCTestCase {
     
