@@ -11,8 +11,10 @@ import Foundation
 public enum Case {
     case Original
     case Snake
-    case Camel
-    case Pascal
+    
+    // TODO:
+    //    case Camel
+    //    case Pascal
     
     static var defaultCase: Case {
         return .Snake
@@ -24,10 +26,6 @@ public enum Case {
             return string
         case .Snake:
             return snakeCase(string)
-        case .Camel:
-            return camelCase(string)
-        case .Pascal:
-            return pascalCase(string)
         }
     }
     
@@ -38,15 +36,5 @@ public enum Case {
             }
             .lowercaseString
             .stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "_"))
-    }
-    
-    private func camelCase(string: String) -> String {
-        // TODO: Imp
-        return string
-    }
-    
-    private func pascalCase(string: String) -> String {
-        // TODO: Imp
-        return string
     }
 }
