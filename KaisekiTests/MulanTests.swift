@@ -64,4 +64,22 @@ class Object: Entity {
     // Filled with null
     let filledWithNull = Property<Int?>(filledWithNull: true)
     let filledWithNullNonOpt = Property<Int>(filledWithNull: true)
+    
+    // Enum
+    let objectTypeOne = Property<ObjectType>()
+    let objectTypeTwo = Property<ObjectType>()
+    let objectTypeElse = Property<ObjectType>()
+    let objectTypeOpt = Property<ObjectType?>()
+    let objectTypeOptNull = Property<ObjectType?>()
+    let objectTypeOptOne = Property<ObjectType?>()
+}
+
+enum ObjectType: Int, ValueType {
+    case One
+    case Two
+    case Unknown = 999
+    
+    static func defaultValue() -> ObjectType {
+        return .Unknown
+    }
 }

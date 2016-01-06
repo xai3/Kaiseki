@@ -7,7 +7,7 @@
 //
 
 public protocol ValueType {
-    init()
+    static func defaultValue() -> Self
     
     static func fromJSON(json: AnyObject?) -> Self?
     func toJSON() -> AnyObject?
@@ -30,13 +30,31 @@ extension ValueType {
     }
 }
 
-extension Bool: ValueType { }
-extension Int: ValueType { }
-extension Float: ValueType { }
-extension Double: ValueType { }
-extension String: ValueType { }
+extension Bool: ValueType {
+    public static func defaultValue() -> Bool { return false }
+}
+
+extension Int: ValueType {
+    public static func defaultValue() -> Int { return 0 }
+}
+
+extension Float: ValueType {
+    public static func defaultValue() -> Float { return 0 }
+}
+
+extension Double: ValueType {
+    public static func defaultValue() -> Double { return 0 }
+}
+
+extension String: ValueType {
+    public static func defaultValue() -> String { return "" }
+}
 
 extension Optional: ValueType { // TODO: where Wrapped: ValueType
+    public static func defaultValue() -> Wrapped? {
+        return nil
+    }
+    
     public static func fromJSON(json: AnyObject?) -> Wrapped?? {
         guard let valueType = Wrapped.self as? ValueType.Type,
             let value = valueType.fromJSON(json),
@@ -64,6 +82,10 @@ extension Optional: ValueType { // TODO: where Wrapped: ValueType
 }
 
 extension Array: ValueType { // TODO: where Element: ValueType
+    public static func defaultValue() -> [Element] {
+        return []
+    }
+    
     public static func fromJSON(json: AnyObject?) -> [Element]? {
         guard let arr = json as? [AnyObject] else {
             return nil
@@ -83,5 +105,20 @@ extension Array: ValueType { // TODO: where Element: ValueType
             }
             return value.toJSON()
         }
+    }
+}
+
+// MARK: For enum
+
+extension ValueType where Self: RawRepresentable {
+    public static func fromJSON(json: AnyObject?) -> Self? {
+        guard let value = json as? Self.RawValue else {
+            return nil
+        }
+        return self.init(rawValue: value)
+    }
+    
+    public func toJSON() -> AnyObject? {
+        return rawValue as? AnyObject
     }
 }

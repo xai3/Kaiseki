@@ -22,7 +22,7 @@ public class Property<Value: ValueType>: PropertyType {
     var filledWithNull: Bool
     var valueChanged: ValueChanged?
     
-    public init(_ value: Value = Value(), key: String? = nil, keyCase: Case? = nil, filledWithNull: Bool = false, valueChanged: ValueChanged? = nil) {
+    public init(_ value: Value = Value.defaultValue(), key: String? = nil, keyCase: Case? = nil, filledWithNull: Bool = false, valueChanged: ValueChanged? = nil) {
         self.value = value
         self.key = key
         self.keyCase = keyCase
