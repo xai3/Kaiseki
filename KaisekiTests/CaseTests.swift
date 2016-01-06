@@ -1,6 +1,6 @@
 //
 //  CaseTests.swift
-//  Mulan
+//  Kaiseki
 //
 //  Created by asai.yuki on 2015/12/29.
 //  Copyright © 2015年 yukiasai. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 
 import XCTest
-@testable import Mulan
+@testable import Kaiseki
 
 class CaseTests: XCTestCase {
     

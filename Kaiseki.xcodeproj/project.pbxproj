@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		467D2D8D1C3019080088E33D /* Mulan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467D2D821C3019070088E33D /* Mulan.framework */; };
-		46A12AD21C3B78D6004517B6 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12AC51C3B78D6004517B6 /* Case.swift */; };
-		46A12AD31C3B78D6004517B6 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12AC61C3B78D6004517B6 /* Entity.swift */; };
-		46A12AD41C3B78D6004517B6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46A12AC71C3B78D6004517B6 /* Info.plist */; };
-		46A12AD61C3B78D6004517B6 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12AC91C3B78D6004517B6 /* Property.swift */; };
-		46A12AD71C3B78D6004517B6 /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12ACA1C3B78D6004517B6 /* PropertyType.swift */; };
-		46A12AD81C3B78D6004517B6 /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12ACB1C3B78D6004517B6 /* ValueType.swift */; };
-		46A12ADE1C3B78DF004517B6 /* CaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12ACD1C3B78D6004517B6 /* CaseTests.swift */; };
-		46A12ADF1C3B78DF004517B6 /* FromJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12ACE1C3B78D6004517B6 /* FromJSONTests.swift */; };
-		46A12AE01C3B78DF004517B6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46A12ACF1C3B78D6004517B6 /* Info.plist */; };
-		46A12AE11C3B78DF004517B6 /* MulanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12AD01C3B78D6004517B6 /* MulanTests.swift */; };
-		46A12AE21C3B78DF004517B6 /* ToJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12AD11C3B78D6004517B6 /* ToJSONTests.swift */; };
-		46A12AE31C3B78E7004517B6 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12AC51C3B78D6004517B6 /* Case.swift */; };
-		46A12AE41C3B78E7004517B6 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12AC61C3B78D6004517B6 /* Entity.swift */; };
-		46A12AE51C3B78E7004517B6 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12AC91C3B78D6004517B6 /* Property.swift */; };
-		46A12AE61C3B78E7004517B6 /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12ACA1C3B78D6004517B6 /* PropertyType.swift */; };
-		46A12AE71C3B78E7004517B6 /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A12ACB1C3B78D6004517B6 /* ValueType.swift */; };
+		461B7F111C3CCB39009FC87A /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F041C3CCB39009FC87A /* Case.swift */; };
+		461B7F121C3CCB39009FC87A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F051C3CCB39009FC87A /* Entity.swift */; };
+		461B7F131C3CCB39009FC87A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 461B7F061C3CCB39009FC87A /* Info.plist */; };
+		461B7F141C3CCB39009FC87A /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F081C3CCB39009FC87A /* Property.swift */; };
+		461B7F151C3CCB39009FC87A /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F091C3CCB39009FC87A /* PropertyType.swift */; };
+		461B7F161C3CCB39009FC87A /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F0A1C3CCB39009FC87A /* ValueType.swift */; };
+		461B7F191C3CCB39009FC87A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 461B7F0E1C3CCB39009FC87A /* Info.plist */; };
+		461B7F1C1C3CCB3F009FC87A /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F041C3CCB39009FC87A /* Case.swift */; };
+		461B7F1D1C3CCB3F009FC87A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F051C3CCB39009FC87A /* Entity.swift */; };
+		461B7F1E1C3CCB3F009FC87A /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F081C3CCB39009FC87A /* Property.swift */; };
+		461B7F1F1C3CCB3F009FC87A /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F091C3CCB39009FC87A /* PropertyType.swift */; };
+		461B7F201C3CCB3F009FC87A /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F0A1C3CCB39009FC87A /* ValueType.swift */; };
+		461B7F211C3CCBBD009FC87A /* CaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F0C1C3CCB39009FC87A /* CaseTests.swift */; };
+		461B7F221C3CCBBD009FC87A /* FromJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F0D1C3CCB39009FC87A /* FromJSONTests.swift */; };
+		461B7F231C3CCBBD009FC87A /* MulanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F0F1C3CCB39009FC87A /* MulanTests.swift */; };
+		461B7F241C3CCBBD009FC87A /* ToJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F101C3CCB39009FC87A /* ToJSONTests.swift */; };
+		461B7F251C3CCBC1009FC87A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 461B7F0E1C3CCB39009FC87A /* Info.plist */; };
+		467D2D8D1C3019080088E33D /* Kaiseki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467D2D821C3019070088E33D /* Kaiseki.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,20 +38,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		467D2D821C3019070088E33D /* Mulan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mulan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		467D2D8C1C3019080088E33D /* Mulan.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mulan.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46A12AC51C3B78D6004517B6 /* Case.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
-		46A12AC61C3B78D6004517B6 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		46A12AC71C3B78D6004517B6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46A12AC91C3B78D6004517B6 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
-		46A12ACA1C3B78D6004517B6 /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
-		46A12ACB1C3B78D6004517B6 /* ValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueType.swift; sourceTree = "<group>"; };
-		46A12ACD1C3B78D6004517B6 /* CaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseTests.swift; sourceTree = "<group>"; };
-		46A12ACE1C3B78D6004517B6 /* FromJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSONTests.swift; sourceTree = "<group>"; };
-		46A12ACF1C3B78D6004517B6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46A12AD01C3B78D6004517B6 /* MulanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulanTests.swift; sourceTree = "<group>"; };
-		46A12AD11C3B78D6004517B6 /* ToJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSONTests.swift; sourceTree = "<group>"; };
-		46A12AE81C3B7B87004517B6 /* Mulan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mulan.h; sourceTree = "<group>"; };
+		461B7F041C3CCB39009FC87A /* Case.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
+		461B7F051C3CCB39009FC87A /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		461B7F061C3CCB39009FC87A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		461B7F071C3CCB39009FC87A /* Kaiseki.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kaiseki.h; sourceTree = "<group>"; };
+		461B7F081C3CCB39009FC87A /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		461B7F091C3CCB39009FC87A /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
+		461B7F0A1C3CCB39009FC87A /* ValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueType.swift; sourceTree = "<group>"; };
+		461B7F0C1C3CCB39009FC87A /* CaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseTests.swift; sourceTree = "<group>"; };
+		461B7F0D1C3CCB39009FC87A /* FromJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSONTests.swift; sourceTree = "<group>"; };
+		461B7F0E1C3CCB39009FC87A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		461B7F0F1C3CCB39009FC87A /* MulanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulanTests.swift; sourceTree = "<group>"; };
+		461B7F101C3CCB39009FC87A /* ToJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSONTests.swift; sourceTree = "<group>"; };
+		467D2D821C3019070088E33D /* Kaiseki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kaiseki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		467D2D8C1C3019080088E33D /* Kaiseki.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Kaiseki.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,18 +66,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				467D2D8D1C3019080088E33D /* Mulan.framework in Frameworks */,
+				467D2D8D1C3019080088E33D /* Kaiseki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461B7F031C3CCB39009FC87A /* Kaiseki */ = {
+			isa = PBXGroup;
+			children = (
+				461B7F041C3CCB39009FC87A /* Case.swift */,
+				461B7F051C3CCB39009FC87A /* Entity.swift */,
+				461B7F061C3CCB39009FC87A /* Info.plist */,
+				461B7F071C3CCB39009FC87A /* Kaiseki.h */,
+				461B7F081C3CCB39009FC87A /* Property.swift */,
+				461B7F091C3CCB39009FC87A /* PropertyType.swift */,
+				461B7F0A1C3CCB39009FC87A /* ValueType.swift */,
+			);
+			path = Kaiseki;
+			sourceTree = "<group>";
+		};
+		461B7F0B1C3CCB39009FC87A /* KaisekiTests */ = {
+			isa = PBXGroup;
+			children = (
+				461B7F0C1C3CCB39009FC87A /* CaseTests.swift */,
+				461B7F0D1C3CCB39009FC87A /* FromJSONTests.swift */,
+				461B7F0E1C3CCB39009FC87A /* Info.plist */,
+				461B7F0F1C3CCB39009FC87A /* MulanTests.swift */,
+				461B7F101C3CCB39009FC87A /* ToJSONTests.swift */,
+			);
+			path = KaisekiTests;
+			sourceTree = "<group>";
+		};
 		467D2D781C3019070088E33D = {
 			isa = PBXGroup;
 			children = (
-				46A12AC41C3B78D6004517B6 /* Mulan */,
-				46A12ACC1C3B78D6004517B6 /* MulanTests */,
+				461B7F031C3CCB39009FC87A /* Kaiseki */,
+				461B7F0B1C3CCB39009FC87A /* KaisekiTests */,
 				467D2D831C3019070088E33D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,44 +111,18 @@
 		467D2D831C3019070088E33D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				467D2D821C3019070088E33D /* Mulan.framework */,
-				467D2D8C1C3019080088E33D /* Mulan.xctest */,
+				467D2D821C3019070088E33D /* Kaiseki.framework */,
+				467D2D8C1C3019080088E33D /* Kaiseki.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		46A12AC41C3B78D6004517B6 /* Mulan */ = {
-			isa = PBXGroup;
-			children = (
-				46A12AC51C3B78D6004517B6 /* Case.swift */,
-				46A12AC61C3B78D6004517B6 /* Entity.swift */,
-				46A12AC71C3B78D6004517B6 /* Info.plist */,
-				46A12AE81C3B7B87004517B6 /* Mulan.h */,
-				46A12AC91C3B78D6004517B6 /* Property.swift */,
-				46A12ACA1C3B78D6004517B6 /* PropertyType.swift */,
-				46A12ACB1C3B78D6004517B6 /* ValueType.swift */,
-			);
-			path = Mulan;
-			sourceTree = "<group>";
-		};
-		46A12ACC1C3B78D6004517B6 /* MulanTests */ = {
-			isa = PBXGroup;
-			children = (
-				46A12ACD1C3B78D6004517B6 /* CaseTests.swift */,
-				46A12ACE1C3B78D6004517B6 /* FromJSONTests.swift */,
-				46A12ACF1C3B78D6004517B6 /* Info.plist */,
-				46A12AD01C3B78D6004517B6 /* MulanTests.swift */,
-				46A12AD11C3B78D6004517B6 /* ToJSONTests.swift */,
-			);
-			path = MulanTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		467D2D811C3019070088E33D /* Mulan */ = {
+		467D2D811C3019070088E33D /* Kaiseki */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 467D2D961C3019080088E33D /* Build configuration list for PBXNativeTarget "Mulan" */;
+			buildConfigurationList = 467D2D961C3019080088E33D /* Build configuration list for PBXNativeTarget "Kaiseki" */;
 			buildPhases = (
 				467D2D7D1C3019070088E33D /* Sources */,
 				467D2D7E1C3019070088E33D /* Frameworks */,
@@ -131,14 +132,14 @@
 			);
 			dependencies = (
 			);
-			name = Mulan;
+			name = Kaiseki;
 			productName = Mulan;
-			productReference = 467D2D821C3019070088E33D /* Mulan.framework */;
+			productReference = 467D2D821C3019070088E33D /* Kaiseki.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		467D2D8B1C3019080088E33D /* MulanTests */ = {
+		467D2D8B1C3019080088E33D /* KaisekiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 467D2D991C3019080088E33D /* Build configuration list for PBXNativeTarget "MulanTests" */;
+			buildConfigurationList = 467D2D991C3019080088E33D /* Build configuration list for PBXNativeTarget "KaisekiTests" */;
 			buildPhases = (
 				467D2D881C3019080088E33D /* Sources */,
 				467D2D891C3019080088E33D /* Frameworks */,
@@ -149,9 +150,9 @@
 			dependencies = (
 				467D2D8F1C3019080088E33D /* PBXTargetDependency */,
 			);
-			name = MulanTests;
+			name = KaisekiTests;
 			productName = MulanTests;
-			productReference = 467D2D8C1C3019080088E33D /* Mulan.xctest */;
+			productReference = 467D2D8C1C3019080088E33D /* Kaiseki.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 467D2D7C1C3019070088E33D /* Build configuration list for PBXProject "Mulan" */;
+			buildConfigurationList = 467D2D7C1C3019070088E33D /* Build configuration list for PBXProject "Kaiseki" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -184,8 +185,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				467D2D811C3019070088E33D /* Mulan */,
-				467D2D8B1C3019080088E33D /* MulanTests */,
+				467D2D811C3019070088E33D /* Kaiseki */,
+				467D2D8B1C3019080088E33D /* KaisekiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -195,7 +196,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A12AD41C3B78D6004517B6 /* Info.plist in Resources */,
+				461B7F191C3CCB39009FC87A /* Info.plist in Resources */,
+				461B7F131C3CCB39009FC87A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A12AE01C3B78DF004517B6 /* Info.plist in Resources */,
+				461B7F251C3CCBC1009FC87A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,11 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A12AD71C3B78D6004517B6 /* PropertyType.swift in Sources */,
-				46A12AD61C3B78D6004517B6 /* Property.swift in Sources */,
-				46A12AD81C3B78D6004517B6 /* ValueType.swift in Sources */,
-				46A12AD31C3B78D6004517B6 /* Entity.swift in Sources */,
-				46A12AD21C3B78D6004517B6 /* Case.swift in Sources */,
+				461B7F151C3CCB39009FC87A /* PropertyType.swift in Sources */,
+				461B7F141C3CCB39009FC87A /* Property.swift in Sources */,
+				461B7F161C3CCB39009FC87A /* ValueType.swift in Sources */,
+				461B7F121C3CCB39009FC87A /* Entity.swift in Sources */,
+				461B7F111C3CCB39009FC87A /* Case.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,15 +228,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A12AE51C3B78E7004517B6 /* Property.swift in Sources */,
-				46A12AE21C3B78DF004517B6 /* ToJSONTests.swift in Sources */,
-				46A12ADE1C3B78DF004517B6 /* CaseTests.swift in Sources */,
-				46A12AE71C3B78E7004517B6 /* ValueType.swift in Sources */,
-				46A12AE41C3B78E7004517B6 /* Entity.swift in Sources */,
-				46A12AE61C3B78E7004517B6 /* PropertyType.swift in Sources */,
-				46A12AE31C3B78E7004517B6 /* Case.swift in Sources */,
-				46A12ADF1C3B78DF004517B6 /* FromJSONTests.swift in Sources */,
-				46A12AE11C3B78DF004517B6 /* MulanTests.swift in Sources */,
+				461B7F241C3CCBBD009FC87A /* ToJSONTests.swift in Sources */,
+				461B7F1F1C3CCB3F009FC87A /* PropertyType.swift in Sources */,
+				461B7F1E1C3CCB3F009FC87A /* Property.swift in Sources */,
+				461B7F201C3CCB3F009FC87A /* ValueType.swift in Sources */,
+				461B7F231C3CCBBD009FC87A /* MulanTests.swift in Sources */,
+				461B7F1D1C3CCB3F009FC87A /* Entity.swift in Sources */,
+				461B7F1C1C3CCB3F009FC87A /* Case.swift in Sources */,
+				461B7F221C3CCBBD009FC87A /* FromJSONTests.swift in Sources */,
+				461B7F211C3CCBBD009FC87A /* CaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +245,7 @@
 /* Begin PBXTargetDependency section */
 		467D2D8F1C3019080088E33D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 467D2D811C3019070088E33D /* Mulan */;
+			target = 467D2D811C3019070088E33D /* Kaiseki */;
 			targetProxy = 467D2D8E1C3019080088E33D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -346,11 +348,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Mulan/Info.plist;
+				INFOPLIST_FILE = Kaiseki/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.Mulan;
-				PRODUCT_NAME = Mulan;
+				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.Kaiseki;
+				PRODUCT_NAME = Kaiseki;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -364,11 +366,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Mulan/Info.plist;
+				INFOPLIST_FILE = Kaiseki/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.Mulan;
-				PRODUCT_NAME = Mulan;
+				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.Kaiseki;
+				PRODUCT_NAME = Kaiseki;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -376,27 +378,27 @@
 		467D2D9A1C3019080088E33D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = MulanTests/Info.plist;
+				INFOPLIST_FILE = KaisekiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.MulanTests;
-				PRODUCT_NAME = Mulan;
+				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.KaisekiTests;
+				PRODUCT_NAME = Kaiseki;
 			};
 			name = Debug;
 		};
 		467D2D9B1C3019080088E33D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = MulanTests/Info.plist;
+				INFOPLIST_FILE = KaisekiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.MulanTests;
-				PRODUCT_NAME = Mulan;
+				PRODUCT_BUNDLE_IDENTIFIER = yukiasai.KaisekiTests;
+				PRODUCT_NAME = Kaiseki;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		467D2D7C1C3019070088E33D /* Build configuration list for PBXProject "Mulan" */ = {
+		467D2D7C1C3019070088E33D /* Build configuration list for PBXProject "Kaiseki" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				467D2D941C3019080088E33D /* Debug */,
@@ -405,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		467D2D961C3019080088E33D /* Build configuration list for PBXNativeTarget "Mulan" */ = {
+		467D2D961C3019080088E33D /* Build configuration list for PBXNativeTarget "Kaiseki" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				467D2D971C3019080088E33D /* Debug */,
@@ -414,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		467D2D991C3019080088E33D /* Build configuration list for PBXNativeTarget "MulanTests" */ = {
+		467D2D991C3019080088E33D /* Build configuration list for PBXNativeTarget "KaisekiTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				467D2D9A1C3019080088E33D /* Debug */,

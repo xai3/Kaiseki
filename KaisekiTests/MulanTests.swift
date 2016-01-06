@@ -1,15 +1,15 @@
 //
-//  MulanTests.swift
-//  MulanTests
+//  KaisekiTests.swift
+//  KaisekiTests
 //
 //  Created by asai.yuki on 2015/12/27.
 //  Copyright © 2015年 yukiasai. All rights reserved.
 //
 
 import XCTest
-@testable import Mulan
+@testable import Kaiseki
 
-class MulanTests: XCTestCase {
+class KaisekiTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
