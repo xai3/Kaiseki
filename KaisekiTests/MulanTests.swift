@@ -70,7 +70,7 @@ class Object: Entity {
     let objectTypeTwo = Property<ObjectType>()
     let objectTypeElse = Property<ObjectType>()
     let objectTypeOpt = Property<ObjectType?>()
-    let objectTypeOptNull = Property<ObjectType?>()
+    let objectTypeOptNull = Property<ObjectType?>(filledWithNull: true)
     let objectTypeOptOne = Property<ObjectType?>()
 }
 

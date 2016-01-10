@@ -122,4 +122,23 @@ class ToJSONTests: XCTestCase {
         XCTAssertNil(json["filled_with_null_non_opt"] as? NSNull)
     }
     
+    func testEnum() {
+        let object = Object()
+        object.objectTypeOne.value = .One
+        object.objectTypeTwo.value = .Two
+        object.objectTypeOpt.value = nil
+        object.objectTypeOptNull.value = nil
+        object.objectTypeOptOne.value = .One
+        
+        guard let json = object.toJSON() as? [String: AnyObject] else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(json["object_type_one"] as? Int, ObjectType.One.rawValue)
+        XCTAssertEqual(json["object_type_two"] as? Int, ObjectType.Two.rawValue)
+        XCTAssertEqual(json["object_type_else"] as? Int, ObjectType.defaultValue().rawValue)
+        XCTAssertNil(json["object_type_opt"])
+        XCTAssertEqual(json["object_type_opt_null"] as? NSNull, NSNull())
+        XCTAssertEqual(json["object_type_opt_one"] as? Int, ObjectType.One.rawValue)
+    }
 }
