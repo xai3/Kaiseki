@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		461B7F111C3CCB39009FC87A /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F041C3CCB39009FC87A /* Case.swift */; };
 		461B7F121C3CCB39009FC87A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F051C3CCB39009FC87A /* Entity.swift */; };
-		461B7F131C3CCB39009FC87A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 461B7F061C3CCB39009FC87A /* Info.plist */; };
 		461B7F141C3CCB39009FC87A /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F081C3CCB39009FC87A /* Property.swift */; };
 		461B7F151C3CCB39009FC87A /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F091C3CCB39009FC87A /* PropertyType.swift */; };
 		461B7F161C3CCB39009FC87A /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F0A1C3CCB39009FC87A /* ValueType.swift */; };
@@ -25,6 +24,7 @@
 		461B7F241C3CCBBD009FC87A /* ToJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B7F101C3CCB39009FC87A /* ToJSONTests.swift */; };
 		461B7F251C3CCBC1009FC87A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 461B7F0E1C3CCB39009FC87A /* Info.plist */; };
 		467D2D8D1C3019080088E33D /* Kaiseki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467D2D821C3019070088E33D /* Kaiseki.framework */; };
+		9C3137191C468169001DB8B7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3137181C468169001DB8B7 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 /* Begin PBXFileReference section */
 		461B7F041C3CCB39009FC87A /* Case.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
 		461B7F051C3CCB39009FC87A /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		461B7F061C3CCB39009FC87A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		461B7F071C3CCB39009FC87A /* Kaiseki.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kaiseki.h; sourceTree = "<group>"; };
 		461B7F081C3CCB39009FC87A /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		461B7F091C3CCB39009FC87A /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
 		461B7F0A1C3CCB39009FC87A /* ValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueType.swift; sourceTree = "<group>"; };
@@ -52,6 +50,8 @@
 		461B7F101C3CCB39009FC87A /* ToJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSONTests.swift; sourceTree = "<group>"; };
 		467D2D821C3019070088E33D /* Kaiseki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kaiseki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D2D8C1C3019080088E33D /* Kaiseki.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Kaiseki.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3137181C468169001DB8B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C31371A1C46848E001DB8B7 /* Kaiseki.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kaiseki.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,18 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		461B7F031C3CCB39009FC87A /* Kaiseki */ = {
+		461B7F031C3CCB39009FC87A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				461B7F041C3CCB39009FC87A /* Case.swift */,
 				461B7F051C3CCB39009FC87A /* Entity.swift */,
-				461B7F061C3CCB39009FC87A /* Info.plist */,
-				461B7F071C3CCB39009FC87A /* Kaiseki.h */,
 				461B7F081C3CCB39009FC87A /* Property.swift */,
 				461B7F091C3CCB39009FC87A /* PropertyType.swift */,
 				461B7F0A1C3CCB39009FC87A /* ValueType.swift */,
 			);
-			path = Kaiseki;
+			name = Classes;
+			path = Kaiseki/Classes;
 			sourceTree = "<group>";
 		};
 		461B7F0B1C3CCB39009FC87A /* KaisekiTests */ = {
@@ -102,7 +101,8 @@
 		467D2D781C3019070088E33D = {
 			isa = PBXGroup;
 			children = (
-				461B7F031C3CCB39009FC87A /* Kaiseki */,
+				9C3137171C468148001DB8B7 /* Kaiseki */,
+				461B7F031C3CCB39009FC87A /* Classes */,
 				461B7F0B1C3CCB39009FC87A /* KaisekiTests */,
 				467D2D831C3019070088E33D /* Products */,
 			);
@@ -115,6 +115,15 @@
 				467D2D8C1C3019080088E33D /* Kaiseki.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9C3137171C468148001DB8B7 /* Kaiseki */ = {
+			isa = PBXGroup;
+			children = (
+				9C3137181C468169001DB8B7 /* Info.plist */,
+				9C31371A1C46848E001DB8B7 /* Kaiseki.h */,
+			);
+			path = Kaiseki;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				461B7F191C3CCB39009FC87A /* Info.plist in Resources */,
-				461B7F131C3CCB39009FC87A /* Info.plist in Resources */,
+				9C3137191C468169001DB8B7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
